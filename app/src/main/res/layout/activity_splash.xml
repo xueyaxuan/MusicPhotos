@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,31 +8,43 @@
     <ImageView
         android:layout_width="@dimen/dimen_200_dip"
         android:layout_height="@dimen/dimen_200_dip"
-        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/icon_splash"
         android:layout_marginTop="@dimen/dimen_300_dip"/>
 
     <TextView
         android:id="@+id/tv_appName"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/dimen_100_dip"
         android:background="#ffffff"
         android:gravity="center"
-        android:layout_marginTop="@dimen/dimen_40_dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dimen_25_dip"
         android:textSize="@dimen/dimen_40_dip"
         android:textColor="#000000"
-        android:text="致****的礼物"
+        android:text="***********"
         android:textStyle="bold"/>
 
 
     <TextView
-        android:id="@+id/tv_target"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_80_dip"
+        android:id="@+id/tv_dates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="#ffffff"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/dimen_390_dip"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dimen_400_dip"
         android:textSize="@dimen/dimen_22_dip"
-        android:textColor="#000000"/>
+        android:textColor="#646464"/>
+
+    <TextView
+        android:id="@+id/tv_incur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dimen_15_dip"
+        android:textSize="@dimen/dimen_22_dip"
+        android:textColor="#646464"/>
 </LinearLayout>
