@@ -1,10 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
+    <!--引导页的ViewPager-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_guide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+
+
+
+    <!--下面的引导圆点-->
+    <RelativeLayout
+        android:id="@+id/rl_dots"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dimen_40_dip">
+        <!--在里面动态添加-->
+        <LinearLayout
+            android:id="@+id/in_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--需要添加的小白点-->
+            <ImageView
+                android:id="@+id/iv_gray_dots1"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/orange_dot" />
+            <!--需要添加的小白点-->
+            <ImageView
+                android:id="@+id/iv_gray_dots2"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/orange_dot" />
 
-</LinearLayout>
+            <ImageView
+                android:id="@+id/iv_gray_dots3"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@drawable/orange_dot" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!--最后一页的登录按钮-->
+    <TextView
+        android:id="@+id/tv_start_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/rl_dots"
+        android:layout_marginBottom="@dimen/dimen_30_dip"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="@dimen/dimen_30_dip"
+        android:text="开始体验">
+    </TextView>
+
+
+</RelativeLayout>

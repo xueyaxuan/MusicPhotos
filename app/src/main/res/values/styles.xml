@@ -13,4 +13,21 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <!--全屏设置-->
+    <style  name="FullTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!--去掉标题栏-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--去掉状态栏-->
+        <item name="android:windowFullscreen">?android:windowNoTitle</item>
+    </style>
+
+    <style name="SuccessDialog" parent="android:style/Theme.Dialog">
+        <!-- 第一个是dialog的背景色，可以设置图片 -->
+        <item name="android:background">@drawable/shape_dialog_success</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--这里设置为没有标题栏，如果这里不设置的话，你会发现无论布局怎么改都会出现多一栏白色 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFrame">@null</item><!--边框-->
+    </style>
 </resources>

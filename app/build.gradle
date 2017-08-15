@@ -28,6 +28,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
     testCompile 'junit:junit:4.12'
     compile 'com.gyf.barlibrary:barlibrary:2.2.5'
+    compile 'com.github.medyo:fancybuttons:1.8.4'
 
 
 }

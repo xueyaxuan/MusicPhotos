@@ -3,28 +3,20 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
-
-    <ImageView
-        android:layout_width="@dimen/dimen_200_dip"
-        android:layout_height="@dimen/dimen_200_dip"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/icon_splash"
-        android:layout_marginTop="@dimen/dimen_300_dip"/>
+    android:background="@drawable/splash_page">
 
     <TextView
         android:id="@+id/tv_appName"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/dimen_100_dip"
+        android:layout_height="wrap_content"
         android:background="#ffffff"
         android:gravity="center"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/dimen_25_dip"
-        android:textSize="@dimen/dimen_40_dip"
-        android:textColor="#000000"
+        android:layout_gravity="center"
+        android:layout_marginTop="360dp"
+        android:textSize="@dimen/dimen_35_dip"
+        android:textColor="#D48F90"
         android:text="***********"
-        android:textStyle="bold"/>
-
+        android:textStyle="italic"/>
 
     <TextView
         android:id="@+id/tv_dates"
@@ -33,9 +25,9 @@
         android:background="#ffffff"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_marginTop="@dimen/dimen_400_dip"
+        android:layout_marginTop="@dimen/dimen_330_dip"
         android:textSize="@dimen/dimen_22_dip"
-        android:textColor="#646464"/>
+        android:textColor="#D48F90"/>
 
     <TextView
         android:id="@+id/tv_incur"
@@ -46,5 +38,7 @@
         android:gravity="center"
         android:layout_marginTop="@dimen/dimen_15_dip"
         android:textSize="@dimen/dimen_22_dip"
-        android:textColor="#646464"/>
+        android:textColor="#D48F90"/>
+
+
 </LinearLayout>
