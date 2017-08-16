@@ -68,8 +68,8 @@ public class GuideActivity extends Activity implements View.OnClickListener{
     private List<View> getImageViews() {
         List<View> imagesViews = new ArrayList<>();
         LayoutInflater lf = getLayoutInflater().from(this);
-        imagesViews.add(lf.inflate(R.layout.layout_indicator_one, null));
         imagesViews.add(lf.inflate(R.layout.layout_indicator_two, null));
+        imagesViews.add(lf.inflate(R.layout.layout_indicator_one, null));
         imagesViews.add(lf.inflate(R.layout.layout_indicator_three, null));
         return imagesViews;
     }

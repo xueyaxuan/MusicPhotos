@@ -54,7 +54,7 @@
         android:id="@+id/tv_start_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_centerHorizontal="true"
         android:layout_above="@id/rl_dots"
         android:layout_marginBottom="@dimen/dimen_30_dip"

@@ -3,26 +3,29 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="45dp"
-    android:background="@android:color/white"
-    >
-   <LinearLayout
-       android:id="@+id/ll_back"
-       android:layout_width="45dp"
-       android:layout_height="45dp"
-       android:gravity="center">
-       <ImageView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:src="@drawable/back"/>
-   </LinearLayout>
-    <TextView
-        android:id="@+id/tv_titlebar_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:padding="6dp"
-        android:text="首页"
-        android:textColor="#000000"
-        android:textSize="24sp" />
+    android:alpha="0.4"
+    android:background="@android:color/white">
+        <TextView
+            android:id="@+id/tv_titlebar_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="6dp"
+            android:background="@android:color/white"
+            android:text="首页"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="24sp" />
 
+        <CheckBox
+            android:id="@+id/check_butn_menu"
+            android:layout_width="@dimen/dimen_50_dip"
+            android:layout_height="@dimen/dimen_50_dip"
+            android:button="@null"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:checked="true"
+            android:layout_marginRight="@dimen/dimen_20_dip"
+            android:background="@drawable/selector_check_titlebar"
+            android:tint="#000000"/>
 </RelativeLayout>
