@@ -17,15 +17,16 @@
             android:textColor="#000000"
             android:textSize="24sp" />
 
-        <CheckBox
-            android:id="@+id/check_butn_menu"
+        <LinearLayout
+            android:id="@+id/ll_butn_menu"
             android:layout_width="@dimen/dimen_50_dip"
             android:layout_height="@dimen/dimen_50_dip"
             android:button="@null"
             android:layout_centerVertical="true"
+            android:orientation="horizontal"
             android:layout_alignParentRight="true"
             android:checked="true"
             android:layout_marginRight="@dimen/dimen_20_dip"
-            android:background="@drawable/selector_check_titlebar"
+            android:background="@drawable/icon_butn_open"
             android:tint="#000000"/>
 </RelativeLayout>

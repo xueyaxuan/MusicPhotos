@@ -1,10 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/ll_title"
     android:background="@drawable/main_background">
-    <include layout="@layout/titlebar_back"/>
+
+    <!--内容布局-->
+    <com.yasic.bubbleview.BubbleView
+        android:id="@+id/bv_bubbleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:outlineProvider="background">
+        <include
+            android:id="@+id/incude_title"
+            layout="@layout/titlebar_back"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_300_dip"
+            android:layout_marginTop="@dimen/dimen_119_dip"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/ll_ToHoldYourHand"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/dimen_35_dip"
+                android:layout_marginRight="@dimen/dimen_30_dip"
+                android:layout_marginTop="@dimen/dimen_20_dip"
+                android:layout_marginBottom="@dimen/dimen_20_dip"
+                android:background="@drawable/image_main_background_one">
+                <LinearLayout
+                    android:id="@+id/ll_showPhotosNameOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_70_dip"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    android:alpha="0.4"
+                    android:background="@android:color/white"
+                    android:layout_gravity="bottom">
+
+                    <TextView
+                        android:id="@+id/tv_photosName_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_70_dip"
+                        android:textColor="@android:color/black"
+                        android:text="相册一"
+                        android:textStyle="italic"
+                        android:gravity="center"
+                        android:textSize="@dimen/dimen_40_dip"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_photos_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_70_dip"
+                    android:background="#d2ffffff"
+                    android:visibility="gone"
+                    android:layout_gravity="bottom">
+                    <EditText
+                        android:id="@+id/edit_intput_photosOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_40_dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:hint="请输入新的名称"
+                        android:textSize="@dimen/dimen_20_dip"
+                        android:paddingLeft="@dimen/dimen_5_dip"
+                        android:layout_marginRight="@dimen/dimen_10_dip"
+                        android:layout_marginLeft="@dimen/dimen_10_dip"
+                        android:background="@drawable/shapa_edit_main"
+                        android:maxLength="10"
+                        android:maxLines="1" />
+                    <TextView
+                        android:id="@+id/tv_click_sure_photosOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_40_dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="3"
+                        android:layout_marginRight="@dimen/dimen_10_dip"
+                        android:text="取消"
+                        android:textSize="@dimen/dimen_20_dip"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/shapa_photos_text"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_IProteetYou"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/dimen_30_dip"
+                android:layout_marginRight="@dimen/dimen_35_dip"
+                android:layout_marginTop="@dimen/dimen_20_dip"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/dimen_20_dip"
+                android:background="@drawable/image_main_background_two">
+                <LinearLayout
+                    android:id="@+id/ll_showPhotosNameTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_70_dip"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    android:alpha="0.4"
+                    android:background="@android:color/white"
+                    android:layout_gravity="bottom">
+                    <TextView
+                        android:id="@+id/tv_photosName_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@android:color/black"
+                        android:text="相册二"
+                        android:textStyle="italic"
+                        android:gravity="center"
+                        android:textSize="@dimen/dimen_40_dip"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_photos_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_70_dip"
+                    android:background="#d2ffffff"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:layout_gravity="bottom">
+                    <EditText
+                        android:id="@+id/edit_intput_photosTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_40_dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:hint="请输入新的名称"
+                        android:paddingLeft="@dimen/dimen_5_dip"
+                        android:textSize="@dimen/dimen_20_dip"
+                        android:layout_marginRight="@dimen/dimen_10_dip"
+                        android:layout_marginLeft="@dimen/dimen_10_dip"
+                        android:background="@drawable/shapa_edit_main"
+                        android:maxLength="10"
+                        android:maxLines="1" />
+                    <TextView
+                        android:id="@+id/tv_click_sure_photosTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_40_dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="3"
+                        android:layout_marginRight="@dimen/dimen_10_dip"
+                        android:text="取消"
+                        android:textSize="@dimen/dimen_20_dip"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/shapa_photos_text"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.yasic.bubbleview.BubbleView>
 
 </LinearLayout>
