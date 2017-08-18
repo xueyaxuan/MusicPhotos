@@ -4,15 +4,20 @@ import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.jaeger.library.StatusBarUtil;
@@ -23,15 +28,18 @@ import java.util.List;
 
 import wifeadult.xueyaxuan.com.musicphoto_incur_dearwivesadult.R;
 
-public class MainActivity extends Activity implements View.OnClickListener,View.OnLongClickListener{
+public class MainActivity extends Activity implements View.OnClickListener,View.OnLongClickListener,RadioGroup.OnCheckedChangeListener{
     private TextView tv_title,tv_sure_one,tv_sure_two,tv_name_one,tv_name_two;
     private LinearLayout checkBox,ll_photoName_one,ll_photoName_two;
     private EditText et_input_one,et_input_two;
-    private LinearLayout ll_ToHoldYourHand,ll_IProteetYou,title,ll_showNameOne,ll_showNameTwo;
+    private LinearLayout ll_ToHoldYourHand,ll_IProteetYou,title,ll_showNameOne,ll_showNameTwo,music_Controller;
     private PopupWindow popupWindow;
     private BubbleView bubbleView;
+    private RadioGroup rg_group;
+    private RadioButton music_start,music_last,music_stop,music_next;
     private List<Drawable> lists = new ArrayList<>();
     private DisplayMetrics dm;
+    private float position = 0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,6 +47,12 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
         setContentView(R.layout.activity_main);
         StatusBarUtil.setTranslucent(this,100);
         addDatas();
+        rg_group = (RadioGroup) findViewById(R.id.rg_butn_group);
+        music_last = (RadioButton) findViewById(R.id.rb_butn_last);
+        music_next = (RadioButton) findViewById(R.id.rb_butn_next);
+        music_start = (RadioButton) findViewById(R.id.rb_butn_startORpause);
+        music_stop = (RadioButton) findViewById(R.id.rb_butn_stop);
+        music_Controller = (LinearLayout) findViewById(R.id.ll_music_controller);
         ll_showNameOne = (LinearLayout) findViewById(R.id.ll_showPhotosNameOne);
         ll_showNameTwo = (LinearLayout) findViewById(R.id.ll_showPhotosNameTwo);
         tv_name_one = (TextView) findViewById(R.id.tv_photosName_one);
@@ -71,11 +85,12 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
             }
         };
         timer.start();
-
-
-
-
-
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+              music_Controller.setVisibility(View.GONE);
+            }
+        },10000);
 
     }
 
@@ -172,7 +187,25 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
 
             }
         });
-
+        bubbleView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        position = event.getY();
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        if(event.getY() > position && (event.getY() - position) > 200.0){
+                           music_Controller.setVisibility(View.GONE);
+                        }else if(event.getY() < position && (position - event.getY()) > 200.0){
+                            music_Controller.setVisibility(View.VISIBLE);
+                        }
+                        break;
+                }
+                return true;
+            }
+        });
+        rg_group.setOnCheckedChangeListener(this);
     }
 
     @Override
@@ -290,4 +323,22 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
         return false;
     }
 
+    @Override
+    public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+        switch (checkedId){
+            case  R.id.rb_butn_last:
+
+                    break;
+            case  R.id.rb_butn_next:
+
+                    break;
+            case  R.id.rb_butn_startORpause:
+
+                    break;
+            case  R.id.rb_butn_stop:
+
+                    break;
+
+        }
+    }
 }

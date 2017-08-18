@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:id="@+id/ll_title"
     android:background="@drawable/main_background">
@@ -29,8 +29,7 @@
                 android:layout_marginLeft="@dimen/dimen_35_dip"
                 android:layout_marginRight="@dimen/dimen_30_dip"
                 android:layout_marginTop="@dimen/dimen_20_dip"
-                android:layout_marginBottom="@dimen/dimen_20_dip"
-                android:background="@drawable/image_main_background_one">
+                android:layout_marginBottom="@dimen/dimen_20_dip">
                 <LinearLayout
                     android:id="@+id/ll_showPhotosNameOne"
                     android:layout_width="match_parent"
@@ -97,8 +96,7 @@
                 android:layout_marginRight="@dimen/dimen_35_dip"
                 android:layout_marginTop="@dimen/dimen_20_dip"
                 android:orientation="horizontal"
-                android:layout_marginBottom="@dimen/dimen_20_dip"
-                android:background="@drawable/image_main_background_two">
+                android:layout_marginBottom="@dimen/dimen_20_dip">
                 <LinearLayout
                     android:id="@+id/ll_showPhotosNameTwo"
                     android:layout_width="match_parent"
@@ -158,7 +156,78 @@
             </LinearLayout>
 
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_music_controller"
+            android:layout_width="@dimen/dimen_570_dip"
+            android:layout_height="@dimen/dimen_100_dip"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:alpha="0.2"
+            android:background="@android:color/black">
+            <RadioGroup
+                android:id="@+id/rg_butn_group"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <RadioButton
+                    android:id="@+id/rb_butn_last"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:button="@null"
+                    android:layout_weight="1"
+                    android:layout_marginRight="@dimen/dimen_35_dip"
+                    android:layout_marginLeft="@dimen/dimen_35_dip"
+                    android:layout_marginTop="@dimen/dimen_15_dip"
+                    android:layout_marginBottom="@dimen/dimen_15_dip"
+                    android:background="@drawable/icon_music_last"
+                    android:backgroundTint="@android:color/white"/>
+
+                <RadioButton
+                    android:id="@+id/rb_butn_startORpause"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:layout_marginRight="@dimen/dimen_35_dip"
+                    android:layout_marginLeft="@dimen/dimen_35_dip"
+                    android:layout_marginTop="@dimen/dimen_15_dip"
+                    android:layout_marginBottom="@dimen/dimen_15_dip"
+                    android:backgroundTint="@android:color/white"
+                    android:background="@drawable/selector_radiobutn_checked"
+                    android:button="@null" />
+
+                <RadioButton
+                    android:id="@+id/rb_butn_stop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:button="@null"
+                    android:layout_weight="1"
+                    android:layout_marginRight="@dimen/dimen_35_dip"
+                    android:layout_marginLeft="@dimen/dimen_35_dip"
+                    android:layout_marginTop="@dimen/dimen_15_dip"
+                    android:layout_marginBottom="@dimen/dimen_15_dip"
+                    android:background="@drawable/icon_music_stop"
+                    android:backgroundTint="@android:color/white"/>
+
+                <RadioButton
+                    android:id="@+id/rb_butn_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:button="@null"
+                    android:layout_weight="1"
+                    android:layout_marginRight="@dimen/dimen_35_dip"
+                    android:layout_marginLeft="@dimen/dimen_35_dip"
+                    android:layout_marginTop="@dimen/dimen_15_dip"
+                    android:layout_marginBottom="@dimen/dimen_15_dip"
+                    android:background="@drawable/icon_music_next"
+                    android:backgroundTint="@android:color/white"/>
+            </RadioGroup>
+        </LinearLayout>
 
     </com.yasic.bubbleview.BubbleView>
+
 
 </LinearLayout>
