@@ -2,10 +2,10 @@ package wifeadult.xueyaxuan.com.musicphoto_incur_dearwivesadult.activity;
 
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
-import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -16,9 +16,8 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jaeger.library.StatusBarUtil;
 import com.yasic.bubbleview.BubbleView;
@@ -28,17 +27,17 @@ import java.util.List;
 
 import wifeadult.xueyaxuan.com.musicphoto_incur_dearwivesadult.R;
 
-public class MainActivity extends Activity implements View.OnClickListener,View.OnLongClickListener,RadioGroup.OnCheckedChangeListener{
+public class MainActivity extends Activity implements View.OnClickListener,View.OnLongClickListener{
     private TextView tv_title,tv_sure_one,tv_sure_two,tv_name_one,tv_name_two;
     private LinearLayout checkBox,ll_photoName_one,ll_photoName_two;
     private EditText et_input_one,et_input_two;
     private LinearLayout ll_ToHoldYourHand,ll_IProteetYou,title,ll_showNameOne,ll_showNameTwo,music_Controller;
     private PopupWindow popupWindow;
     private BubbleView bubbleView;
-    private RadioGroup rg_group;
-    private RadioButton music_start,music_last,music_stop,music_next;
+    private TextView music_start,music_last,music_stop,music_next;
     private List<Drawable> lists = new ArrayList<>();
     private DisplayMetrics dm;
+    private MediaPlayer mediaPlayer;
     private float position = 0;
 
     @Override
@@ -47,11 +46,10 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
         setContentView(R.layout.activity_main);
         StatusBarUtil.setTranslucent(this,100);
         addDatas();
-        rg_group = (RadioGroup) findViewById(R.id.rg_butn_group);
-        music_last = (RadioButton) findViewById(R.id.rb_butn_last);
-        music_next = (RadioButton) findViewById(R.id.rb_butn_next);
-        music_start = (RadioButton) findViewById(R.id.rb_butn_startORpause);
-        music_stop = (RadioButton) findViewById(R.id.rb_butn_stop);
+        music_last = (TextView) findViewById(R.id.rb_butn_last);
+        music_next = (TextView) findViewById(R.id.rb_butn_next);
+        music_start = (TextView) findViewById(R.id.rb_butn_startORpause);
+        music_stop = (TextView) findViewById(R.id.rb_butn_stop);
         music_Controller = (LinearLayout) findViewById(R.id.ll_music_controller);
         ll_showNameOne = (LinearLayout) findViewById(R.id.ll_showPhotosNameOne);
         ll_showNameTwo = (LinearLayout) findViewById(R.id.ll_showPhotosNameTwo);
@@ -91,7 +89,39 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
               music_Controller.setVisibility(View.GONE);
             }
         },10000);
+        musicStartMethod();
+    }
 
+    /**
+     * 自定义音乐播放方法
+     */
+    private void musicStartMethod() {
+       if(mediaPlayer == null){
+           mediaPlayer = MediaPlayer.create(MainActivity.this,R.raw.yatou_wangtongyu);
+           mediaPlayer.start();
+       }else{
+           mediaPlayer.start();
+       }
+    }
+
+    /**
+     * 音乐停止播放方法
+     */
+    private void musicPauseMethod(){
+        if(mediaPlayer != null && mediaPlayer.isPlaying()){
+            mediaPlayer.pause();
+        }
+    }
+
+    /**
+     * 自定义音乐停止播放
+     */
+    private void musicStopMethod(){
+        if(mediaPlayer != null){
+            mediaPlayer.stop();
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 
     /**
@@ -187,6 +217,10 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
 
             }
         });
+        music_next.setOnClickListener(this);
+        music_last.setOnClickListener(this);
+        music_start.setOnClickListener(this);
+        music_stop.setOnClickListener(this);
         bubbleView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -205,7 +239,6 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
                 return true;
             }
         });
-        rg_group.setOnCheckedChangeListener(this);
     }
 
     @Override
@@ -267,11 +300,34 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
                     }
                 }
                 break;
+            case R.id.rb_butn_startORpause:
+                if(mediaPlayer == null || !mediaPlayer.isPlaying()){
+                    music_start.setBackground(getDrawable(R.drawable.icon_music_pause));
+                    musicStartMethod();
+                }else if(mediaPlayer != null && mediaPlayer.isPlaying()){
+                    music_start.setBackground(getDrawable(R.drawable.icon_music_start));
+                    musicPauseMethod();
+                }
+                break;
+            case R.id.rb_butn_next:
+
+                break;
+            case R.id.rb_butn_last:
+
+                break;
+            case R.id.rb_butn_stop:
+                if(mediaPlayer != null){
+                    musicStopMethod();
+                    music_start.setBackground(getDrawable(R.drawable.icon_music_start));
+                }else{
+                    Toast.makeText(MainActivity.this,"当前无歌曲播放!",Toast.LENGTH_SHORT).show();
+                }
+                break;
         }
     }
 
     /**
-     * 用于选择累计或者新增显示的时间区域
+     * 用于选择列表项的选择区域
      */
     private void categroy() {
         View view = View.inflate(this, R.layout.popup_item_layout, null);
@@ -321,24 +377,5 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
                 break;
         }
         return false;
-    }
-
-    @Override
-    public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-        switch (checkedId){
-            case  R.id.rb_butn_last:
-
-                    break;
-            case  R.id.rb_butn_next:
-
-                    break;
-            case  R.id.rb_butn_startORpause:
-
-                    break;
-            case  R.id.rb_butn_stop:
-
-                    break;
-
-        }
     }
 }
