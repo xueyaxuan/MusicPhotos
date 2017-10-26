@@ -1,6 +1,7 @@
 package wifeadult.xueyaxuan.com.musicphoto_incur_dearwivesadult.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -89,7 +90,7 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
               music_Controller.setVisibility(View.GONE);
             }
         },10000);
-        musicStartMethod();
+//        musicStartMethod();
     }
 
     /**
@@ -245,10 +246,12 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.ll_IProteetYou:
-
+                Intent intent1 = new Intent(this,IProteetYouActivity.class);
+                startActivity(intent1);
                 break;
             case R.id.ll_ToHoldYourHand:
-
+                Intent intent2 = new Intent(this,ToHoldYourHandActivity.class);
+                startActivity(intent2);
                 break;
             case R.id.ll_butn_menu:
                 if(ll_showNameOne.getVisibility() != View.VISIBLE && ll_photoName_one.getVisibility() == View.VISIBLE){

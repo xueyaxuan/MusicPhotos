@@ -13,77 +13,84 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:outlineProvider="background">
+
         <include
             android:id="@+id/incude_title"
-            layout="@layout/titlebar_back"/>
+            layout="@layout/titlebar_back" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_300_dip"
             android:layout_marginTop="@dimen/dimen_119_dip"
             android:orientation="horizontal">
+
             <LinearLayout
                 android:id="@+id/ll_ToHoldYourHand"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_marginBottom="@dimen/dimen_20_dip"
                 android:layout_marginLeft="@dimen/dimen_35_dip"
                 android:layout_marginRight="@dimen/dimen_30_dip"
                 android:layout_marginTop="@dimen/dimen_20_dip"
-                android:layout_marginBottom="@dimen/dimen_20_dip">
+                android:layout_weight="1">
+
                 <LinearLayout
                     android:id="@+id/ll_showPhotosNameOne"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_70_dip"
-                    android:orientation="vertical"
-                    android:visibility="visible"
+                    android:layout_gravity="bottom"
                     android:alpha="0.4"
                     android:background="@android:color/white"
-                    android:layout_gravity="bottom">
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
                     <TextView
                         android:id="@+id/tv_photosName_one"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dimen_70_dip"
-                        android:textColor="@android:color/black"
-                        android:text="相册一"
-                        android:textStyle="italic"
                         android:gravity="center"
-                        android:textSize="@dimen/dimen_40_dip"/>
+                        android:text="相册一"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dimen_40_dip"
+                        android:textStyle="italic" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/ll_photos_one"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_70_dip"
+                    android:layout_gravity="bottom"
                     android:background="#d2ffffff"
-                    android:visibility="gone"
-                    android:layout_gravity="bottom">
+                    android:visibility="gone">
+
                     <EditText
                         android:id="@+id/edit_intput_photosOne"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dimen_40_dip"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:hint="请输入新的名称"
-                        android:textSize="@dimen/dimen_20_dip"
-                        android:paddingLeft="@dimen/dimen_5_dip"
-                        android:layout_marginRight="@dimen/dimen_10_dip"
                         android:layout_marginLeft="@dimen/dimen_10_dip"
+                        android:layout_marginRight="@dimen/dimen_10_dip"
+                        android:layout_weight="1"
                         android:background="@drawable/shapa_edit_main"
+                        android:hint="请输入新的名称"
                         android:maxLength="10"
-                        android:maxLines="1" />
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/dimen_5_dip"
+                        android:textSize="@dimen/dimen_20_dip" />
+
                     <TextView
                         android:id="@+id/tv_click_sure_photosOne"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dimen_40_dip"
                         android:layout_gravity="center"
-                        android:layout_weight="3"
                         android:layout_marginRight="@dimen/dimen_10_dip"
-                        android:text="取消"
-                        android:textSize="@dimen/dimen_20_dip"
+                        android:layout_weight="3"
+                        android:background="@drawable/shapa_photos_text"
                         android:gravity="center"
-                        android:textStyle="bold"
+                        android:text="取消"
                         android:textColor="#FFFFFF"
-                        android:background="@drawable/shapa_photos_text"/>
+                        android:textSize="@dimen/dimen_20_dip"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -91,133 +98,143 @@
                 android:id="@+id/ll_IProteetYou"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_marginBottom="@dimen/dimen_20_dip"
                 android:layout_marginLeft="@dimen/dimen_30_dip"
                 android:layout_marginRight="@dimen/dimen_35_dip"
                 android:layout_marginTop="@dimen/dimen_20_dip"
-                android:orientation="horizontal"
-                android:layout_marginBottom="@dimen/dimen_20_dip">
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
                 <LinearLayout
                     android:id="@+id/ll_showPhotosNameTwo"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_70_dip"
-                    android:orientation="vertical"
-                    android:visibility="visible"
+                    android:layout_gravity="bottom"
                     android:alpha="0.4"
                     android:background="@android:color/white"
-                    android:layout_gravity="bottom">
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
                     <TextView
                         android:id="@+id/tv_photosName_two"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:textColor="@android:color/black"
-                        android:text="相册二"
-                        android:textStyle="italic"
                         android:gravity="center"
-                        android:textSize="@dimen/dimen_40_dip"/>
+                        android:text="相册二"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dimen_40_dip"
+                        android:textStyle="italic" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/ll_photos_two"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_70_dip"
+                    android:layout_gravity="bottom"
                     android:background="#d2ffffff"
-                    android:visibility="gone"
                     android:orientation="horizontal"
-                    android:layout_gravity="bottom">
+                    android:visibility="gone">
+
                     <EditText
                         android:id="@+id/edit_intput_photosTwo"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dimen_40_dip"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:hint="请输入新的名称"
-                        android:paddingLeft="@dimen/dimen_5_dip"
-                        android:textSize="@dimen/dimen_20_dip"
-                        android:layout_marginRight="@dimen/dimen_10_dip"
                         android:layout_marginLeft="@dimen/dimen_10_dip"
+                        android:layout_marginRight="@dimen/dimen_10_dip"
+                        android:layout_weight="1"
                         android:background="@drawable/shapa_edit_main"
+                        android:hint="请输入新的名称"
                         android:maxLength="10"
-                        android:maxLines="1" />
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/dimen_5_dip"
+                        android:textSize="@dimen/dimen_20_dip" />
+
                     <TextView
                         android:id="@+id/tv_click_sure_photosTwo"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dimen_40_dip"
                         android:layout_gravity="center"
-                        android:layout_weight="3"
                         android:layout_marginRight="@dimen/dimen_10_dip"
-                        android:text="取消"
-                        android:textSize="@dimen/dimen_20_dip"
+                        android:layout_weight="3"
+                        android:background="@drawable/shapa_photos_text"
                         android:gravity="center"
-                        android:textStyle="bold"
+                        android:text="取消"
                         android:textColor="#FFFFFF"
-                        android:background="@drawable/shapa_photos_text"/>
+                        android:textSize="@dimen/dimen_20_dip"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/ll_music_controller"
-            android:layout_width="@dimen/dimen_570_dip"
-            android:layout_height="@dimen/dimen_100_dip"
-            android:orientation="horizontal"
+            android:layout_width="@dimen/dimen_565_dip"
+            android:layout_height="@dimen/dimen_95_dip"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:alpha="0.2"
-            android:background="@android:color/black">
+            android:alpha="0.3"
+            android:background="@android:color/black"
+            android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/rb_butn_last"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:button="@null"
-                    android:layout_weight="1"
-                    android:layout_marginRight="@dimen/dimen_35_dip"
-                    android:layout_marginLeft="@dimen/dimen_35_dip"
-                    android:layout_marginTop="@dimen/dimen_15_dip"
-                    android:layout_marginBottom="@dimen/dimen_15_dip"
-                    android:background="@drawable/icon_music_last"
-                    android:backgroundTint="@android:color/white"/>
+            <TextView
+                android:id="@+id/rb_butn_last"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/dimen_23_dip"
+                android:layout_marginLeft="@dimen/dimen_45_dip"
+                android:layout_marginRight="@dimen/dimen_45_dip"
+                android:layout_marginTop="@dimen/dimen_23_dip"
+                android:layout_weight="1"
+                android:background="@drawable/icon_music_last"
+                android:backgroundTint="@android:color/white"
+                android:button="@null" />
 
-                <TextView
-                    android:id="@+id/rb_butn_startORpause"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:checked="false"
-                    android:layout_marginRight="@dimen/dimen_35_dip"
-                    android:layout_marginLeft="@dimen/dimen_35_dip"
-                    android:layout_marginTop="@dimen/dimen_15_dip"
-                    android:layout_marginBottom="@dimen/dimen_15_dip"
-                    android:backgroundTint="@android:color/white"
-                    android:background="@drawable/icon_music_pause"
-                    android:button="@null" />
+            <TextView
+                android:id="@+id/rb_butn_startORpause"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/dimen_23_dip"
+                android:layout_marginLeft="@dimen/dimen_45_dip"
+                android:layout_marginRight="@dimen/dimen_45_dip"
+                android:layout_marginTop="@dimen/dimen_23_dip"
+                android:layout_weight="1"
+                android:background="@drawable/icon_music_pause"
+                android:backgroundTint="@android:color/white"
+                android:button="@null"
+                android:checked="false" />
 
-                <TextView
-                    android:id="@+id/rb_butn_stop"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:button="@null"
-                    android:layout_weight="1"
-                    android:layout_marginRight="@dimen/dimen_35_dip"
-                    android:layout_marginLeft="@dimen/dimen_35_dip"
-                    android:layout_marginTop="@dimen/dimen_15_dip"
-                    android:layout_marginBottom="@dimen/dimen_15_dip"
-                    android:background="@drawable/icon_music_stop"
-                    android:backgroundTint="@android:color/white"/>
+            <TextView
+                android:id="@+id/rb_butn_stop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/dimen_23_dip"
+                android:layout_marginLeft="@dimen/dimen_45_dip"
+                android:layout_marginRight="@dimen/dimen_45_dip"
+                android:layout_marginTop="@dimen/dimen_23_dip"
+                android:layout_weight="1"
+                android:background="@drawable/icon_music_stop"
+                android:backgroundTint="@android:color/white"
+                android:button="@null" />
 
-                <TextView
-                    android:id="@+id/rb_butn_next"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:button="@null"
-                    android:layout_weight="1"
-                    android:layout_marginRight="@dimen/dimen_35_dip"
-                    android:layout_marginLeft="@dimen/dimen_35_dip"
-                    android:layout_marginTop="@dimen/dimen_15_dip"
-                    android:layout_marginBottom="@dimen/dimen_15_dip"
-                    android:background="@drawable/icon_music_next"
-                    android:backgroundTint="@android:color/white"/>
+            <TextView
+                android:id="@+id/rb_butn_next"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/dimen_23_dip"
+                android:layout_marginLeft="@dimen/dimen_45_dip"
+                android:layout_marginRight="@dimen/dimen_45_dip"
+                android:layout_marginTop="@dimen/dimen_23_dip"
+                android:layout_weight="1"
+                android:background="@drawable/icon_music_next"
+                android:backgroundTint="@android:color/white"
+                android:button="@null" />
         </LinearLayout>
 
     </com.yasic.bubbleview.BubbleView>
