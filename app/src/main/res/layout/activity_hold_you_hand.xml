@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff">
-    <TextView
+    android:background="#828181">
+    <View
+        android:id="@+id/msg_background"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="相册一界面"
-        android:gravity="center"/>
-</LinearLayout>
+        android:layout_height="@dimen/dimen_80_dip"
+        android:background="#ffffff"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+    <TextView
+        android:id="@+id/tv_showMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="**********"
+        android:paddingTop="@dimen/dimen_6_dip"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

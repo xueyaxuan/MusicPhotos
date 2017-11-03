@@ -28,6 +28,9 @@ import java.util.List;
 
 import wifeadult.xueyaxuan.com.musicphoto_incur_dearwivesadult.R;
 
+import static wifeadult.xueyaxuan.com.musicphoto_incur_dearwivesadult.R.id.tv_item_seven;
+import static wifeadult.xueyaxuan.com.musicphoto_incur_dearwivesadult.R.id.tv_item_six;
+
 public class MainActivity extends Activity implements View.OnClickListener,View.OnLongClickListener{
     private TextView tv_title,tv_sure_one,tv_sure_two,tv_name_one,tv_name_two;
     private LinearLayout checkBox,ll_photoName_one,ll_photoName_two;
@@ -46,7 +49,7 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         StatusBarUtil.setTranslucent(this,100);
-        addDatas();
+        addHeart();
         music_last = (TextView) findViewById(R.id.rb_butn_last);
         music_next = (TextView) findViewById(R.id.rb_butn_next);
         music_start = (TextView) findViewById(R.id.rb_butn_startORpause);
@@ -72,7 +75,7 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
         dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         initView();
-        CountDownTimer timer = new CountDownTimer((24*60*60)*1000,2000) {
+        CountDownTimer timer = new CountDownTimer((24*60*60)*1000,600) {
             @Override
             public void onTick(long millisUntilFinished) {
                 initView();
@@ -130,7 +133,7 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
      */
     private void initView(){
         bubbleView.setDrawableList(lists);//添加数据
-        bubbleView.setRiseDuration(1000*5);//上升动画持续事件
+        bubbleView.setRiseDuration(1000*8);//上升动画持续事件
         bubbleView.setBottomPadding(0);//开始位置相对底部的距离
         bubbleView.setAnimationDelay(0);//两个上升动画的间隔时间
         bubbleView.setMaxHeartNum(5);//屏幕最大显示数量
@@ -145,6 +148,7 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
      * 集合填充数据
      */
     private void addDatas() {
+        lists.clear();
         lists.add(getDrawable(R.drawable.icon_star_one));
         lists.add(getDrawable(R.drawable.icon_star_two));
         lists.add(getDrawable(R.drawable.icon_star_three));
@@ -153,6 +157,10 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
         lists.add(getDrawable(R.drawable.icon_star_six));
         lists.add(getDrawable(R.drawable.icon_star_seven));
         lists.add(getDrawable(R.drawable.icon_star_eight));
+    }
+
+    private void addDatas2() {
+        lists.clear();
         lists.add(getDrawable(R.drawable.icon_star_two_one));
         lists.add(getDrawable(R.drawable.icon_star_two_two));
         lists.add(getDrawable(R.drawable.icon_star_two_three));
@@ -161,6 +169,12 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
         lists.add(getDrawable(R.drawable.icon_star_two_six));
         lists.add(getDrawable(R.drawable.icon_star_two_seven));
         lists.add(getDrawable(R.drawable.icon_star_two_eight));
+    }
+/**
+     * 集合填充数据
+     */
+    private void addDatas3() {
+        lists.clear();
         lists.add(getDrawable(R.drawable.icon_star_three_one));
         lists.add(getDrawable(R.drawable.icon_star_three_two));
         lists.add(getDrawable(R.drawable.icon_star_three_three));
@@ -169,6 +183,11 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
         lists.add(getDrawable(R.drawable.icon_star_three_seven));
         lists.add(getDrawable(R.drawable.icon_star_three_eight));
         lists.add(getDrawable(R.drawable.icon_star_three_five));
+    }
+
+    private void addHeart(){
+        lists.clear();
+        lists.add(getDrawable(R.drawable.icon_heart_ballons));
     }
 
     /**
@@ -337,15 +356,37 @@ public class MainActivity extends Activity implements View.OnClickListener,View.
         View view = View.inflate(this, R.layout.popup_item_layout, null);
         TextView cumulative = (TextView) view.findViewById(R.id.tv_item_myInvoice);
         TextView newAdd = (TextView) view.findViewById(R.id.tv_item_Invoice);
+        TextView six = (TextView) view.findViewById(tv_item_six);
+        TextView seven = (TextView) view.findViewById(tv_item_seven);
         cumulative.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                addHeart();
+                initView();
                 popupWindow.dismiss();
             }
         });
         newAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                addDatas2();
+                initView();
+                popupWindow.dismiss();
+            }
+        });
+        six.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addDatas();
+                initView();
+                popupWindow.dismiss();
+            }
+        });
+        seven.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addDatas3();
+                initView();
                 popupWindow.dismiss();
             }
         });
